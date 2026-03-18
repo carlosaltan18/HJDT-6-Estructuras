@@ -26,9 +26,7 @@ public class Store {
      */
     public Store(Map<String, Product> inventory, MapFactory factory) {
         this.inventory = inventory;
-        @SuppressWarnings("unchecked")
-        Map<String, Integer> cart = (Map<String, Integer>) (Map<?, ?>) factory.createMap();
-        this.userCart = cart;
+        this.userCart = factory.<String,Integer>createMap();
     }
 
     /**

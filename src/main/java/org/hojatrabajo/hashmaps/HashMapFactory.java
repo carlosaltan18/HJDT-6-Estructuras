@@ -19,7 +19,5 @@ public class HashMapFactory implements MapFactory {
      * @return Nueva instancia
      */
     @Override
-    public Map<String, Product> createMap() {
-        return new HashMap<>();
-    }
+    public <K,V>Map<K, V> createMap() {return new HashMap<>();}
 }

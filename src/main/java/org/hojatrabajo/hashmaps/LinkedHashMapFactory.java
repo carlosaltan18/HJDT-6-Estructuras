@@ -16,7 +16,7 @@ public class LinkedHashMapFactory implements MapFactory {
      * @return Nueva instancia de LinkedHashMap.
      */
     @Override
-    public Map<String, Product> createMap() {
+    public <K,V>Map<K, V> createMap() {
         return new LinkedHashMap<>();
     }
 }

@@ -16,7 +16,7 @@ public class TreeMapFactory implements MapFactory {
      * @return Nueva instancia de TreeMap.
      */
     @Override
-    public Map<String, Product> createMap() {
+    public <K,V>Map<K,V> createMap() {
         return new TreeMap<>();
     }
 }
