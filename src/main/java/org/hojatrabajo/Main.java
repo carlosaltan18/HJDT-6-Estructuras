@@ -17,7 +17,7 @@ public class Main {
         Map<String,Product> inventory;
 
         try {
-            inventory = InventoryReader.readInventory("inventario.txt");
+            inventory = InventoryReader.readInventory("ListadoProducto.txt");
         } catch (Exception e) {
             System.out.println("Error al leer el archivo");
             return;
@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Ingrese el tipo de Map");
         System.out.println("1. HashMap");
         System.out.println("2. TreeMap");
-        System.out.println("3. LinkedHashMap");
+        System.out.println("3. LinkedHashMap\n");
         opcion = teclado.nextInt();
         try {factory = SelectFactory.select(opcion);}
         catch (Exception e){System.out.println("Seleccione una de las 3 opciones válidas");}}
