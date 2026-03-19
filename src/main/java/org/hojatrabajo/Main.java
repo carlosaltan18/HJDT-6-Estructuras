@@ -24,8 +24,6 @@ public class Main {
         }
 
         MapFactory factory = null;
-        String producto;
-        int menu = 0;
         int opcion = 0;
 
         System.out.println("Bienvenido al Programa");
@@ -34,26 +32,40 @@ public class Main {
         System.out.println("1. HashMap");
         System.out.println("2. TreeMap");
         System.out.println("3. LinkedHashMap\n");
-        opcion = teclado.nextInt();
+            if (teclado.hasNextInt()) {
+                opcion = teclado.nextInt();
+            } else {
+                System.out.println("Ingrese un número válido");
+                teclado.nextLine();
+                continue;
+            }
+            teclado.nextLine();
         try {factory = SelectFactory.select(opcion);}
         catch (Exception e){System.out.println("Seleccione una de las 3 opciones válidas");}}
 
         Store store = new Store(inventory,factory);
 
+        int menu = 0;
+        String producto;
         while (menu!=7){
             System.out.println("\n===============================");
             System.out.println("              Menu");
             System.out.println("===============================");
             System.out.println("Seleccione una opción");
-            System.out.println("1.Agregar producto al carrito");
-            System.out.println("2.Mostrar categoría de producto");
+            System.out.println("1. Agregar producto al carrito");
+            System.out.println("2. Mostrar categoría de producto");
             System.out.println("3. Mostrar carrito");
             System.out.println("4. Mostrar carrito ordenado");
             System.out.println("5. Mostrar inventario");
             System.out.println("6. Mostrar inventario Ordenado");
             System.out.println("7. Salir");
-
-            menu = teclado.nextInt();
+            if (teclado.hasNextInt()) {
+                menu = teclado.nextInt();
+            } else {
+                System.out.println("Ingrese un número válido");
+                teclado.nextLine();
+                continue;
+            }
             teclado.nextLine();
 
             switch (menu){

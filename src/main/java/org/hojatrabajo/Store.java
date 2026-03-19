@@ -105,11 +105,9 @@ public class Store {
                 },
                 Comparator.naturalOrder()
         ));
-
         System.out.println("\n====== Su Colección (ordenada por categoría) ======");
         System.out.printf("%-35s %-25s %s%n", "Producto", "Categoría", "Cantidad");
         System.out.println("-".repeat(70));
-
         for (Map.Entry<String, Integer> entry : entries) {
             Product p = inventory.get(entry.getKey().toLowerCase());
             if (p != null) {
